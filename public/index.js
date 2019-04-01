@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 ReactDOM.render(
-	<App 
-	  header="I am the header" 
-	  main="I am the main" 
-	  footer="I am the footer" />, 
+	<App/>, 
 	document.getElementById('app')
   );
 
