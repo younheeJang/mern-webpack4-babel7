@@ -15,6 +15,7 @@ class Header extends Component {
 <Button check><Link to="/" style={{ color: '#FFF' }}>Home</Link></Button>
 <Button cancel><Link to="/list" style={{ color: '#dc143c' }}>List</Link></Button>
 <Button check><Link to="/item" style={{ color: '#FFF' }}>Item</Link></Button>
+<Anchor cancel href="https://blog.naver.com/edam0530" style={{ color: '#dc143c' }}>MyBlog</Anchor>
     
 		  </div>
 	   );
@@ -48,4 +49,7 @@ border-radius: 4px;
   color:${props=>props.cancel?"#DC143C":"white"};
   border:${props=>props.cancel?"1px solid #DC143C":""};
 `;
+
+const Anchor = Button.withComponent("a");
+
  export default Header;
