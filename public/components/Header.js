@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Home from '../routes/Home';
 import NoMatch from '../routes/NoMatch';
 import List from '../routes/List';
@@ -15,8 +15,7 @@ class Header extends Component {
 <Button check><Link to="/" style={{ color: '#FFF' }}>Home</Link></Button>
 <Button cancel><Link to="/list" style={{ color: '#dc143c' }}>List</Link></Button>
 <Button check><Link to="/item" style={{ color: '#FFF' }}>Item</Link></Button>
-<Anchor cancel href="https://blog.naver.com/edam0530" style={{ color: '#dc143c' }}>MyBlog</Anchor>
-    
+<Rotate><Anchor cancel href="https://blog.naver.com/edam0530" style={{ color: '#dc143c' }}>MyBlog</Anchor></Rotate>
 		  </div>
 	   );
 	}
@@ -51,5 +50,19 @@ border-radius: 4px;
 `;
 
 const Anchor = Button.withComponent("a");
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
 
+  to {
+    transform: rotate(360deg);
+  }
+`;
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+`;
  export default Header;
