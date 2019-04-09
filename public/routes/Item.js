@@ -30,14 +30,17 @@ background-color:#fcf1ef;
 ${awesomeCard};
 `;
 
+const Card = styled.div`
+  background-color:white;
+`;
+
 const Container = styled.body`
   height:100px;
   width:100%;
-  background-color:pink;
-`;
-
-const Card = styled.div`
-  background-color:white;
+	background-color:pink;
+	${Card}{
+		background-color:blue;
+	}
 `;
 
 const Button = styled.button`
@@ -51,10 +54,10 @@ class Item extends Component {
 		return (
 			<div>
 			<Input placeholder="Item"/>
-			<Container>
-			</Container>
 			<ThemeProvider theme={theme}>
+			<Container>
 			<Form/>
+			</Container>
 			</ThemeProvider>
 			</div>
 		);
